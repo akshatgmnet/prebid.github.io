@@ -27,6 +27,67 @@ privacy_sandbox: paapi, topics
 endpoint_compression: false
 ---
 
+
+### Configure the Medianet adapter in your Prebid Server instance 
+
+**Before you begin:** Contact your Medianet Representative to get an endpoint and setup instructions.
+
+If you are hosting your own Prebid Server instance, depending on whether you are using Prebid Server Go or Prebid Server Java version, complete one of the following steps: 
+
+* If you are using the Prebid Server Go version, in the `static/bidder-info/medianet.yaml` file, complete the following:
+
+  * Add the following new entry and include the regional endpoint provided to you by Media.net:
+
+    ```javascript
+     endpoint: "https://<ENDPOINT URL>"
+     ```
+
+  * Edit the below existing entry and include your publisher ID in the `cid` parameter:
+
+    ```javascript
+     userSync:  
+      redirect:  
+        url: "https://hbx.media.net/cksync.php?cid=<PUBLISHER ID>&cs=1&type=pbs&ovsid=setstatuscode&bidder=medianet&gdpr={{.GDPR}}&gdpr_consent={{.GDPRConsent}}&us_privacy={{.USPrivacy}}&redirect={{.RedirectURL}}&gpp={{.GPP}}&gpp_sid={{.GPPSID}}"
+     ```
+
+  * Edit the below existing entry and include your publisher ID in the `cid` parameter:
+
+     ```javascript
+     userSync:  
+      iframe:  
+        url: "https://hbx.media.net/checksync.php?cid=<PUBLISHER ID>&cs=87&type=mpbc&cv=37&vsSync=1&uspstring={{.USPrivacy}}&gdpr={{.GDPR}}&gdprstring={{.GDPRConsent}}&gpp={{.GPP}}&gpp_sid={{.GPPSID}}&redirect={{.RedirectURL}}"
+      ```         
+
+* If you are using [Prebid Server Java](https://github.com/prebid/prebid-server-java) version, edit the `prebid-server-java` entry in the `src/main/resources/bidder-config/medianet.yaml` file as follows:
+
+  * Edit the below existing entry and include the endpoint URL provided to you by Index.
+
+    ```javascript
+    adapters: 
+     medianet: 
+       endpoint: "https://<ENDPOINT URL>"
+    ```
+
+  * Edit the below existing entry and include your publisher ID in the `s` parameter:
+
+    ```javascript
+     adapters: 
+       medianet: 
+        usersync: 
+         redirect:
+          url: "https://hbx.media.net/cksync.php?cs=1&type=pbs&ovsid=setstatuscode&bidder=medianet&gdpr={{gdpr}}&gdpr_consent={{gdpr_consent}}&us_privacy={{us_privacy}}&gpp={{gpp}}&gpp_sid={{gpp_sid}}&redirect={{redirect_url}}"
+    ```
+
+  * Add the below entry and include your publisher ID in the `s` parameter:
+
+    ```javascript
+    adapters: 
+      medianet: 
+       usersync: 
+        iframe:
+         url: "https://hbx.media.net/checksync.php?cid=<PUBLISHER ID>&cs=87&type=mpbc&cv=37&vsSync=1&uspstring={{us_privacy}}&gdpr={{gdpr}}&gdprstring={{gdpr_consent}}&gpp={{gpp}}&gpp_sid={{gpp_sid}}&redirect={{redirect_url}}"
+    ```
+
 ### Bid Params
 
 {: .table .table-bordered .table-striped }
@@ -154,6 +215,7 @@ var adUnits = [{
   }]
 }];
 ```
+###
 
 ### Protected Audience API (FLEDGE)
 
