@@ -215,8 +215,6 @@ var adUnits = [{
   }]
 }];
 ```
-###
-
 ### Protected Audience API (FLEDGE)
 
 To enable PAAPI auctions follow the instructions below:
