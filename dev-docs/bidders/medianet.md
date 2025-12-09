@@ -68,17 +68,17 @@ If you are hosting your own Prebid Server instance, depending on whether you are
        endpoint: "https://<ENDPOINT URL>"
     ```
 
-  * Edit the below existing entry and include your publisher ID in the `s` parameter:
+  * Edit the below existing entry and include your publisher ID in the `cid` parameter:
 
     ```javascript
      adapters: 
        medianet: 
         usersync: 
          redirect:
-          url: "https://hbx.media.net/cksync.php?cs=1&type=pbs&ovsid=setstatuscode&bidder=medianet&gdpr={{gdpr}}&gdpr_consent={{gdpr_consent}}&us_privacy={{us_privacy}}&gpp={{gpp}}&gpp_sid={{gpp_sid}}&redirect={{redirect_url}}"
+          url: "https://hbx.media.net/cksync.php?cid=<PUBLISHER ID>cs=1&type=pbs&ovsid=setstatuscode&bidder=medianet&gdpr={{gdpr}}&gdpr_consent={{gdpr_consent}}&us_privacy={{us_privacy}}&gpp={{gpp}}&gpp_sid={{gpp_sid}}&redirect={{redirect_url}}"
     ```
 
-  * Add the below entry and include your publisher ID in the `s` parameter:
+  * Add the below entry and include your publisher ID in the `cid` parameter:
 
     ```javascript
     adapters: 
