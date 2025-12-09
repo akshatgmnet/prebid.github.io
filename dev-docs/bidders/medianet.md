@@ -36,12 +36,6 @@ If you are hosting your own Prebid Server instance, depending on whether you are
 
 * If you are using the Prebid Server Go version, in the `static/bidder-info/medianet.yaml` file, complete the following:
 
-  * Add the following new entry and include the regional endpoint provided to you by Media.net:
-
-    ```javascript
-     endpoint: "https://<ENDPOINT URL>"
-     ```
-
   * Edit the below existing entry and include your publisher ID in the `cid` parameter:
 
     ```javascript
@@ -59,14 +53,6 @@ If you are hosting your own Prebid Server instance, depending on whether you are
       ```         
 
 * If you are using [Prebid Server Java](https://github.com/prebid/prebid-server-java) version, edit the `prebid-server-java` entry in the `src/main/resources/bidder-config/medianet.yaml` file as follows:
-
-  * Edit the below existing entry and include the endpoint URL provided to you by Index.
-
-    ```javascript
-    adapters: 
-     medianet: 
-       endpoint: "https://<ENDPOINT URL>"
-    ```
 
   * Edit the below existing entry and include your publisher ID in the `cid` parameter:
 
