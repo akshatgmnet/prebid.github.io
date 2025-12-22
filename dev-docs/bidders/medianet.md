@@ -28,9 +28,7 @@ endpoint_compression: false
 ---
 
 
-### Configure the Medianet adapter in your Prebid Server instance 
-
-**Before you begin:** Contact your Medianet Representative to get an endpoint and setup instructions.
+### Configure the Cookie Sync for Medianet adapter
 
 If you are hosting your own Prebid Server instance, depending on whether you are using Prebid Server Go or Prebid Server Java version, complete one of the following steps: 
 
